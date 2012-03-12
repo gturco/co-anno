@@ -8,10 +8,10 @@ CNS Pipeline
 
 Description
 ===========
-Python application to automate large-scale identification of conserved noncoding sequences (CNS) between two `usefully diverged <http://genomevolution.org/wiki/index.php/Useful_divergence>`_ plant species.
-This application works by first attempting to correct annotation errors between the two species. It then condenses local duplicates and finds syntenic regions based on `ploidy relationships <https://github.com/tanghaibao/quota-alignment>`_. BLAST is then applied to the syntenic regions between the two species to find CNSs. CNSs are found through blastn at an e-value less than or equal to a 15/15 exact base pair match. Nonsyntenic CNSs are removed along with CNS with hits to known RNA or exons.
+Coding sequences of one species are blast to the noncoding sequences of the other. Blastn is ran at a word size of 20 and E-Value < 0.001. Blast 
+hits that hit the same coding region are summed by length. Groups with a sum greater then 100 are recorded as a missed exon strand.
 
-.. image:: http://genomevolution.org/wiki/images/6/6e/Peach-Chocolate-example.png
+.. image:: http://commons.wikimedia.org/wiki/File:Coanno.png
 
 Installation
 ============
@@ -22,20 +22,6 @@ Installation
 
  + `lastz <http://www.bx.psu.edu/~rsharris/lastz/newer/>`_
    (download latest .tar.gz; configure; make; make install) and adjust path in quota.sh)
-
- + `quota-align <http://github.com/tanghaibao/quota-alignment>`_
-   (checkout with git and adjust path in quota.sh)
-
- + `flatfeature <http://github.com/brentp/flatfeature/>`_
-   (check with git and run ``sudo python setup.py install``)
-
- + `pyfasta <https://github.com/brentp/pyfasta>`_ (``sudo easy_install -UZ pyfasta`` you will have latest from pypi).
-
- + `shapely <http://pypi.python.org/pypi/Shapely#downloads>`_ (``sudo apt-get install libgeos-dev``, ``sudo easy_install -UZ 'shapely==1.0.0'``)
-
- + `numpy <http://github.com/numpy/numpy/>`_ checkout and run ``sudo python setup.py install``
-
- + `processing <http://pypi.python.org/pypi/processing#downloads>`_ (``sudo easy_install -UZ processing``)
 
  + `bpbio <http://pypi.python.org/pypi/processing#downloads>`_ (``svn checkout http://bpbio.googlecode.com/svn/trunk/ bpbio-read-only``)
    (run biostuff,coanno and bblast ``sudo python setup.py install``)
