@@ -1,4 +1,4 @@
-CNS Pipeline
+co-anno
 ============
 :Author: Gina Turco (`gturco <https://github.com/gturco>`_), Brent Pedersen (`brentp <http://github.com/brentp>`_)
 :Email: gturco88@gmail.com
