@@ -11,7 +11,7 @@ Description
 Coding sequences of one species are blast to the noncoding sequences of the other. Blastn is ran at a word size of 20 and E-Value < 0.001. Blast 
 hits that hit the same coding region are summed by length. Groups with a sum greater then 100 are recorded as a missed exon strand.
 
-.. image:: http://commons.wikimedia.org/wiki/File:Coanno.png
+.. image:: http://upload.wikimedia.org/wikipedia/commons/b/b4/Coanno.png
 
 Installation
 ============
